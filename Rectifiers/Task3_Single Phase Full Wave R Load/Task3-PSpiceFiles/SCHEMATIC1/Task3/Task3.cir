@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-Task3"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task 3\Task3-PSpiceFiles\SCHEMATIC1\Task3.sim ] 
+
+** Creating circuit file "Task3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.2 0.1 0.0001 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

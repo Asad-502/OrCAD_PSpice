@@ -1,0 +1,57 @@
+
+**** 09/06/24 12:32:13 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Task5"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task5\Task5-PSpiceFiles\SCHEMATIC1\Task5.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task5.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.2 0.1 0.0001 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK5
+V_V1         N00212 N00228  
++SIN 0 220 60 0 0 0
+V_V2         N00212 N00224  
++SIN 0 220 60 0 0 120
+V_V3         N00212 N00232  
++SIN 0 220 60 0 0 -120
+D_D1         N00228 N00236 D1N3940 
+D_D2         N00224 N00236 D1N3940 
+D_D3         N00232 N00236 D1N3940 
+R_R1         N00212 N00236  10 TC=0,0 
+
+**** RESUMING Task5.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N00212 is floating
+
+ERROR(ORPSIM-15142): Node N00228 is floating
+
+ERROR(ORPSIM-15142): Node N00224 is floating
+
+ERROR(ORPSIM-15142): Node N00232 is floating
+
+ERROR(ORPSIM-15142): Node N00236 is floating
+

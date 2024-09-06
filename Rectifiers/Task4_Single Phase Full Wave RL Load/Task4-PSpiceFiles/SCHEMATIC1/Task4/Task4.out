@@ -1,0 +1,118 @@
+
+**** 09/06/24 12:17:03 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task4.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.2 0.1 0.0001 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK4
+D_D2         0 N00596 D1N3940 
+D_D4         N00614 N00618 D1N3940 
+V_V1         N00596 N00614  
++SIN 0 220 60 0 0 0
+R_R1         N00781 N00618  10 TC=0,0 
+D_D3         0 N00614 D1N3940 
+D_D1         N00596 N00618 D1N3940 
+L_L1         N00781 0  20mH  
+
+**** RESUMING Task4.cir ****
+.END
+
+**** 09/06/24 12:17:03 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N3940         
+          IS  400.000000E-12 
+           N    1.48         
+          BV  600            
+         IBV  100.000000E-06 
+          RS     .105        
+          TT  800.000000E-09 
+         CJO   19.500000E-12 
+          VJ     .4          
+           M     .38         
+          FC     .9          
+          EG    1.36         
+         XTI   -8            
+
+
+**** 09/06/24 12:17:03 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00596)-275.4E-21 (N00614)-275.4E-21 (N00618)-249.4E-21 (N00781)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/06/24 12:17:03 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\OrCAD_Tasks\Task4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+
