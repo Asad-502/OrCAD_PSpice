@@ -1,0 +1,182 @@
+
+**** 09/17/24 23:19:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task4.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\Asad Ur Rehman\Desktop\ELEC4170_Fall_2024.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 1e-6 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK4
+V_V4         N06895 0  AC 0
++SIN 0 1 60 0 0 0
+X_U9         N06895 N06899 N06379 PWM PARAMS:  VPOS=15 VNEG=-15
+X_U2         N06431 0 0 N06379 AIGBT 
+X_U1         N06271 N06431 N06379 0 AIGBT 
+X_U4         N06419 0 0 N06355 AIGBT 
+X_U6         N06419 N06271 ADIODE 
+X_U7         0 N06419 ADIODE 
+X_U11         N06899 TRIWAV PARAMS:  DELAY=0 DT=1US PERIOD=1MS LEVEL=1V
+X_U8         0 N06431 ADIODE 
+X_U5         N06431 N06271 ADIODE 
+R_R1         N07961 N06431  0.5 TC=0,0 
+V_V1         N06271 0 220Vdc
+V_V5         N06879 0  AC 0
++SIN 0 1 60 0 0 120
+X_U3         N06271 N06419 N06355 0 AIGBT 
+X_U10         N06879 N06899 N06355 PWM PARAMS:  VPOS=15 VNEG=-15
+X_U15         0 N07354 ADIODE 
+X_U12         N06271 N07354 N07326 0 AIGBT 
+X_U13         N07354 N06271 ADIODE 
+X_U14         N07354 0 0 N07326 AIGBT 
+R_R2         N07961 N06419  0.5 TC=0,0 
+R_R3         N07961 N07354  0.5 TC=0,0 
+V_V6         N08211 0  AC 0
++SIN 0 1 60 0 0 240
+X_U16         N08211 N06899 N07326 PWM PARAMS:  VPOS=15 VNEG=-15
+
+**** RESUMING Task4.cir ****
+.END
+
+**** 09/17/24 23:19:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.diode      X_U7.diode      X_U8.diode      X_U5.diode      
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+           N    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+          RS    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+         CJO  100.000000E-15  100.000000E-15  100.000000E-15  100.000000E-15 
+
+
+               X_U15.diode     X_U13.diode     
+          IS   10.000000E-15   10.000000E-15 
+           N    1.000000E-03    1.000000E-03 
+          RS    1.000000E-03    1.000000E-03 
+         CJO  100.000000E-15  100.000000E-15 
+
+
+**** 09/17/24 23:19:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.igbt       X_U1.igbt       X_U4.igbt       X_U3.igbt       
+         RON    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+        ROFF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
+         VON     .1              .1              .1              .1          
+        VOFF    0               0               0               0            
+
+
+               X_U12.igbt      X_U14.igbt      
+         RON    1.000000E-03    1.000000E-03 
+        ROFF  100.000000E+03  100.000000E+03 
+         VON     .1              .1          
+        VOFF    0               0            
+
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for X_U11.VRAMP.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for X_U11.VRAMP.
+
+**** 09/17/24 23:19:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N06271)  220.0000 (N06355)   15.0000 (N06379)   15.0000 (N06419)  220.0000     
+
+(N06431)  220.0000 (N06879)     .8660 (N06895)    0.0000 (N06899)   -1.0000     
+
+(N07326)   15.0000 (N07354)  220.0000 (N07961)  220.0000 (N08211)    -.8660     
+
+(X_U9.200)   15.0000                  (X_U9.300)    1.0000                      
+
+(X_U10.200)   15.0000                 (X_U10.300)    1.0000                     
+
+(X_U16.200)   15.0000                 (X_U16.300)    1.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V4         0.000E+00
+    V_V1        -6.600E-03
+    V_V5        -8.660E-13
+    V_V6         8.660E-13
+    X_U11.VRAMP   1.000E-06
+
+    TOTAL POWER DISSIPATION   1.45E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/17/24 23:19:50 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task4"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_4\Task4-PSpiceFiles\SCHEMATIC1\Task4.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       17.16
+  Total job time (using Solver 1)   =        2.83
+

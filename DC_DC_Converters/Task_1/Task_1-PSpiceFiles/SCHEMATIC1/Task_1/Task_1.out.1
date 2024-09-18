@@ -1,0 +1,59 @@
+
+**** 09/17/24 14:29:35 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_1"  [ C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_1\Task_1-PSpiceFiles\SCHEMATIC1\Task_1.sim 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task_1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\Asad Ur Rehman\Desktop\ELEC4170_Fall_2024.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 220 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK_1
+V_V1         N00208 0 220Vdc
+X_U1         N00208 N00271 N00854 0 AIGBT 
+X_U2         N00271 0 0 N00854 AIGBT 
+X_U3         N00208 N00275 N00858 0 AIGBT 
+X_U4         N00275 0 0 N00858 AIGBT 
+X_U5         N00271 N00208 ADIODE 
+X_U6         N00275 N00208 ADIODE 
+X_U7         0 N00275 ADIODE 
+X_U8         0 N00271 ADIODE 
+R_R1         N00275 N00271  1k TC=0,0 
+X_U9         N00669 N00706 N00854 PWM PARAMS:  VPOS=15 VNEG=-15
+X_U10         N00830 N00706 N00858 PWM PARAMS:  VPOS=15 VNEG=-15
+V_V2         N00669 0 0.5 Vdc
+--------------------------$
+ERROR -- Expecting keyword STIMULUS, saw Vdc.
+
+X_U11         N00706 TRIWAV PARAMS:  DELAY=0 DT=1US PERIOD=1MS LEVEL=1V
+V_V3         N00830 0 -0.5 Vdc
+---------------------------$
+ERROR -- Expecting keyword STIMULUS, saw Vdc.
+
+
+**** RESUMING Task_1.cir ****
+.END
+
