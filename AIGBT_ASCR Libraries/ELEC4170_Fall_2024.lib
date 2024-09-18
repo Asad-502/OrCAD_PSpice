@@ -1,0 +1,45 @@
+* PSpice Model Editor - Version 16.6.0
+*$
+* Ideal SCR
+.SUBCKT ASCR 1 2 3 2
+S1 1 5 6 2 SMOD ; Switch
+RG 3 4 50
+VX 4 2 DC 0V
+VY 5 2 DC 0V
+RT 2 6 1
+CT 6 2 10UF
+F1 2 6 POLY(2) VX VY 0 50 11
+.MODEL SMOD VSWITCH (RON=0.01 ROFF=10E+5 VON=0.1V VOFF=0V)
+.ENDS
+*$
+***************************
+*Ideal IGBT
+.subckt AIGBT 1 2 3 4
+sw 1 2 3 4 igbt
+.model igbt VSWITCH (RON=0.001 ROFF=1E5 VON=0.1V VOFF=0V)
+.ends AIGBT
+*$
+***************************
+* PWM generator
+.subckt PWM In Carrier Out params: Vpos=1 Vneg=-1
+rin In 0 1T
+Epwm 300 0 TABLE {V(In,Carrier)} = (-1, -1)(-.005,-1)(0,0)(.005,1)(1,1)
+Rpwm 300 0 1T
+egate1 200 0 value={((Vpos+Vneg)+(Vpos-Vneg)*v(300))/2}
+rgate1 Out 0 1T
+RCURR1 200 Out 1n
+.ends
+*$
+***************************
+* Triangular wave generator
+.subckt TRIWAV Out params: delay=0 dt=1us period=1ms level=1V
+VRAMP Out 0 PULSE({-1*level} {1*level} 0 {period/2} {period/2} {dt} {PERIOD})
+rramp Out 0 1meg
+.ends
+***************************
+* Ideal Diode
+.subckt ADIODE 1 2
+dio 1 2 diode
+.model diode d(rs=1m cjo=0.1pf n=0.001)
+.ends ADIODE
+*$
