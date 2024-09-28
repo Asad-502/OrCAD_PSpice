@@ -1,0 +1,192 @@
+
+**** 09/27/24 18:52:28 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_3"  [ c:\users\asad ur rehman\desktop\mid_term\task_3\task_3-PSpiceFiles\SCHEMATIC1\Task_3.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task_3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Cadence\SPB_22.1\tools\pspice\library\ELEC4170_Fall_2024.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 1e-3 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK_3
+L_L3         N130970 N12997  5mH  
+X_U13         N12893 N12689 ADIODE 
+V_V5         N13581 0  AC 0
++SIN 0 1 500 0 0 120
+L_L2         N130410 N12997  5mH  
+X_U9         N13597 N13601 N12869 PWM PARAMS:  VPOS=20 VNEG=-20
+X_U2         N12953 0 0 N12869 AIGBT 
+X_U5         N12953 N12689 ADIODE 
+V_V4         N13597 0  AC 0
++SIN 0 1 500 0 0 0
+V_V1         N12689 0 50v
+X_U10         N13581 N13601 N12837 PWM PARAMS:  VPOS=20 VNEG=-20
+X_U7         0 N12921 ADIODE 
+X_U8         0 N12953 ADIODE 
+X_U6         N12921 N12689 ADIODE 
+R_R2         N130410 N12921  1 TC=0,0 
+X_U16         N13695 N13601 N12793 PWM PARAMS:  VPOS=20 VNEG=-20
+R_R3         N130970 N12893  1 TC=0,0 
+X_U12         N12689 N12893 N12793 0 AIGBT 
+R_R1         N129370 N12953  1 TC=0,0 
+X_U3         N12689 N12921 N12837 0 AIGBT 
+X_U11         N13601 TRIWAV PARAMS:  DELAY=0 DT=1US PERIOD=1MS LEVEL=5V
+V_V6         N13695 0  AC 0
++SIN 0 1 500 0 0 240
+X_U4         N12921 0 0 N12837 AIGBT 
+X_U1         N12689 N12953 N12869 0 AIGBT 
+X_U15         0 N12893 ADIODE 
+X_U14         N12893 0 0 N12793 AIGBT 
+L_L1         N129370 N12997  5mH  
+C_C1         N12953 N12997  1u  TC=0,0 
+C_C2         N12893 N12997  1u  TC=0,0 
+C_C3         N12997 N12921  1u  TC=0,0 
+
+**** RESUMING Task_3.cir ****
+.END
+
+**** 09/27/24 18:52:28 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_3"  [ c:\users\asad ur rehman\desktop\mid_term\task_3\task_3-PSpiceFiles\SCHEMATIC1\Task_3.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U13.diode     X_U5.diode      X_U7.diode      X_U8.diode      
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+           N    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+          RS    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+         CJO  100.000000E-15  100.000000E-15  100.000000E-15  100.000000E-15 
+
+
+               X_U6.diode      X_U15.diode     
+          IS   10.000000E-15   10.000000E-15 
+           N    1.000000E-03    1.000000E-03 
+          RS    1.000000E-03    1.000000E-03 
+         CJO  100.000000E-15  100.000000E-15 
+
+
+**** 09/27/24 18:52:28 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_3"  [ c:\users\asad ur rehman\desktop\mid_term\task_3\task_3-PSpiceFiles\SCHEMATIC1\Task_3.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.igbt       X_U12.igbt      X_U3.igbt       X_U4.igbt       
+         RON    1.000000E-03    1.000000E-03    1.000000E-03    1.000000E-03 
+        ROFF  100.000000E+03  100.000000E+03  100.000000E+03  100.000000E+03 
+         VON     .1              .1              .1              .1          
+        VOFF    0               0               0               0            
+
+
+               X_U1.igbt       X_U14.igbt      
+         RON    1.000000E-03    1.000000E-03 
+        ROFF  100.000000E+03  100.000000E+03 
+         VON     .1              .1          
+        VOFF    0               0            
+
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for X_U11.VRAMP.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for X_U11.VRAMP.
+
+**** 09/27/24 18:52:28 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_3"  [ c:\users\asad ur rehman\desktop\mid_term\task_3\task_3-PSpiceFiles\SCHEMATIC1\Task_3.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N12689)   50.0000 (N12793)   20.0000 (N12837)   20.0000 (N12869)   20.0000     
+
+(N12893)   50.0000 (N12921)   50.0000 (N12953)   50.0000 (N12997)   50.0000     
+
+(N13581)     .8660 (N13597)    0.0000 (N13601)   -5.0000 (N13695)    -.8660     
+
+(N129370)   50.0000                   (N130410)   50.0000                       
+
+(N130970)   50.0000                   (X_U9.200)   20.0000                      
+
+(X_U9.300)    1.0000                  (X_U10.200)   20.0000                     
+
+(X_U10.300)    1.0000                 (X_U16.200)   20.0000                     
+
+(X_U16.300)    1.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V5        -8.660E-13
+    V_V4         0.000E+00
+    V_V1        -1.500E-03
+    V_V6         8.660E-13
+    X_U11.VRAMP   5.000E-06
+
+    TOTAL POWER DISSIPATION   7.50E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 09/27/24 18:52:28 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_3"  [ c:\users\asad ur rehman\desktop\mid_term\task_3\task_3-PSpiceFiles\SCHEMATIC1\Task_3.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       73.11
+  Total job time (using Solver 1)   =        5.08
+

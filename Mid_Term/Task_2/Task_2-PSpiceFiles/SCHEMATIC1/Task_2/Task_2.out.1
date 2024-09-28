@@ -1,0 +1,60 @@
+
+**** 09/25/24 23:09:35 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_2"  [ C:\Users\Asad Ur Rehman\Desktop\Mid_Term\Task_2\Task_2-PSpiceFiles\SCHEMATIC1\Task_2.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task_2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 1e-6 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK_2
+V_V4         N14281 0  
++PULSE 0 20 4.2m 1u 1u 100u 5m
+V_V6         N14623 0  
++PULSE 0 20 15.3m 1u 1u 100u 5m
+V_V1         N14269 0  AC 0
++SIN 0 450 20 0 0 0
+X_U2         N14421 N14273 N14447 N14273 ASCR 
+X_U3         N14607 N14273 N14623 N14273 ASCR 
+V_V2         N14421 0  AC 0
++SIN 0 450 20 0 0 120
+V_V3         N14607 0  AC 0
++SIN 0 450 20 0 0 240
+R_R1         N14537 N14273  5 TC=0,0 
+X_U1         N14269 N14273 N14281 N14273 ASCR 
+V_V5         N14447 0  
++PULSE 0 20 10m 1u 1u 100u 5m
+C_C1         0 N14537  500uF  TC=0,0 
+
+**** RESUMING Task_2.cir ****
+.END
+
+ERROR(ORPSIM-15108): Subcircuit ASCR used by X_U2 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit ASCR used by X_U3 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit ASCR used by X_U1 is undefined
+

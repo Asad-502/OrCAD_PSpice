@@ -43,13 +43,13 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_5\task5.dsn")
+         "e:\git_hub\orcad_pspice\dc_dc_converters\task_5\task5.dsn")
       (Path "Design Resources"
-         "C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_5\task5.dsn"
+         "e:\git_hub\orcad_pspice\dc_dc_converters\task_5\task5.dsn"
          "SCHEMATIC1")
       (Path "Outputs")
       (Select "Design Resources"
-         "C:\Users\Asad Ur Rehman\Desktop\DC_DC_Converters\Task_5\task5.dsn"
+         "e:\git_hub\orcad_pspice\dc_dc_converters\task_5\task5.dsn"
          "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
@@ -60,10 +60,10 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1103 24 623")
-        (Scroll "2341 430")
-        (Zoom "232")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1290 24 623")
+        (Scroll "0 70")
+        (Zoom "100")
         (Occurrence "/"))
-      (Path "C:\USERS\ASAD UR REHMAN\DESKTOP\DC_DC_CONVERTERS\TASK_5\TASK5.DSN")
+      (Path "E:\GIT_HUB\ORCAD_PSPICE\DC_DC_CONVERTERS\TASK_5\TASK5.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1"))))

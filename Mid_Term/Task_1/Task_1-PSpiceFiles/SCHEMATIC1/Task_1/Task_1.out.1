@@ -1,0 +1,49 @@
+
+**** 09/25/24 12:08:25 **** PSpice 22.1.0 (6 October 2022) **** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Task_1"  [ c:\users\asad ur rehman\desktop\mid_term\task_1\task_1-PSpiceFiles\SCHEMATIC1\Task_1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Task_1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Asad Ur Rehman\AppData\Roaming\SPB_16.6\cdssetup\OrCAD_PSpice\22.1.0\PSpice.ini file:
+.lib "C:\Users\Asad Ur Rehman\Desktop\ELEC4170_Fall_2024.lib" 
+
+ERROR(ORPSIM-16276): Simulation cannot be completed because library C:\Users\Asad Ur Rehman\Desktop\ELEC4170_Fall_2024.lib 
+is not available.
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40ms 0 1e-6 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TASK_1
+D_D2         0 N01060 D1N3940 
+L_L1         N01074 0  100mH  
+V_V1         N01060 N01070  
++SIN 0 60 60 0 0 0
+R_R1         N01074 N00978  100 TC=0,0 
+D_D1         N01060 N00978 D1N3940 
+D_D3         0 N01070 D1N3940 
+D_D4         N01070 N00978 D1N3940 
+
+**** RESUMING Task_1.cir ****
+.END
+
